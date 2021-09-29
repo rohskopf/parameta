@@ -1,4 +1,4 @@
-# Parameta - Parallel Heuristics
+# Parameta - Parallel Metaheuristics
 
 Parameta is a massively parallel C++ code for optimization using [metaheuristics](https://en.wikipedia.org/wiki/Metaheuristic). This is useful when the exact functional form of the objective function is either unknown or hard to obtain, therefore rendering gradient-based methods futile.
 
