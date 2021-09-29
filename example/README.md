@@ -1,6 +1,6 @@
 # Simple example - minimizing the 3D Rastrigin function.
 
-![Alt Text](https://github.com/rohskopf/parameta/example/test.gif)
+![](test.gif)
 
 The [Rastrigin function](https://en.wikipedia.org/wiki/Rastrigin_function) is a typical benchmark for global optimization problems. Here we will minimize the 3D function, which is already coded into `objfun.cpp` in the `src` directory.
 
