@@ -1,0 +1,33 @@
+Order of inputs in program:
+seed: random seed
+nepp: number of elements per proc
+nd dimension number
+ni number of iterations
+np >=4 population number
+cr = [0,1] crossover rate
+drate = [0,2] differential rate
+
+Hyperparameters:
+cr = [0,1] crossover rate
+drate = [0,2] differential rate
+np >=4 population number
+nd dimension number
+ni number of iterations
+
+1) Make "np" (population number, np >= 4) randomized individuals of size "nd" (dimension number).
+2) For "ni" (number of generations/iterations) generations/iterations do:
+    3) For each individual "a" do: /* Parallelize this part!!! */
+        4) Pick 3 individuals (b,c,d), not "a", at random.
+        5) Pick a random index "iota" in [0,nd-1].
+        6) Pick a random length "lambda" as follows:
+            7) lambda = 0;
+               while (rand() < cr && lambda < nd){
+                 lambda=lambda+1
+               }
+        8) Compute individuals potentially new position u = [u1,u2,...,u_nd] as follows:
+        9) For each "j" in [1,nd]:
+            10) if (rind % nd) < j && j < ((iota+lambda-1) % nd): // the mod function helps the changed components wrap back around to the beginning
+                11) u[j] = b[j]+drate*(c[j]-d[j])
+            12) else:
+                13) u[j] = a[j]
+        14) If f(u) < f(a), then replace a with u. Otherwise keep a and continue.
