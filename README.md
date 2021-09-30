@@ -49,7 +49,7 @@ where
 - `printall` is a flag, 0 or 1. A value of 0 tells the program either not to print all parameters per generation, while 1 prints this info.
 
 Important notes:
-- This algorithm is parallelized over the number of individuals in the population, i.e. the number of objective function calls per generation.
+- This algorithm is parallelized over the number of individuals in the population, i.e. the number of objective function calls in a single generation.
 - The given population size must be divisible by the number of processes, e.g. np = 80 and nprocs = 8 is fine because 80/8=10.
 - The number of individuals per process must be >= 4 for the differential evolution algorithm to work, e.g. np = 80 and nprocs = 8 is fine because 80/8=10 is greater than 4.
 
